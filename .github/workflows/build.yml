@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup MSVC x86
+      - name: Setup MSVC
         uses: microsoft/setup-msbuild@v1.3.1
         with:
           vs-version: '17.0'
