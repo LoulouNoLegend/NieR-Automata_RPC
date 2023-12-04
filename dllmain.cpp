@@ -1,9 +1,11 @@
+#include <csignal>
 #include <cstdio>
 #include <windows.h>
-#include <cstdint>
-#include <ctime>
+#include <discord_rpc.h>
+#include <linker.hpp>
 
-#include "discord_rpc.h"
+#include "rpc/RPCData.hpp"
+#include "rpc/RPCHandler.hpp"
 
 #ifdef _WIN64
 #pragma comment(lib, "discord-rpc-x64.lib")
@@ -11,42 +13,23 @@
 #pragma comment(lib, "discord-rpc-x86.lib")
 #endif
 
-const char* APPLICATION_ID = "1181021310739042304";
-int64_t StartTime = time(nullptr);
-
-void handleDiscordReady(const DiscordUser* connectedUser)
-{
-    DiscordRichPresence discordPresence = {};
-    discordPresence.state = "Weebing in a weeb game...";
-    discordPresence.smallImageKey = "tom";
-    discordPresence.smallImageText = "Why Crymachina devs didn't add me ?";
-    discordPresence.largeImageKey = "game_icon";
-    discordPresence.largeImageText = "Mod: https://github.com/Crymachina-modding";
-    discordPresence.startTimestamp = StartTime;
-    discordPresence.instance = 0;
-    Discord_UpdatePresence(&discordPresence);
-
-#ifdef _DEBUG
-    printf("\nDiscord: connected to user %s#%s - %s\n",
-           connectedUser->username,
-           connectedUser->discriminator,
-           connectedUser->userId);
-#endif
-}
-
 void init() {
-    DiscordEventHandlers handlers = {};
-    handlers.ready = handleDiscordReady;
-    Discord_Initialize(APPLICATION_ID, &handlers, 1, nullptr);
-
 #ifdef _DEBUG
     AllocConsole();
-    freopen("CONOUT$", "w", stdout);
+    freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
 #endif
 
-    for(;;) {
+    DiscordEventHandlers handlers = {};
+    handlers.ready = RPCHandler::onReady;
+    Discord_Initialize(RPCData::APPLICATION_ID, &handlers, 1, nullptr);
+
+    std::signal(SIGINT, [](int) {
+        RPCData::interrupted = true;
+    });
+
+    do {
         Discord_RunCallbacks();
-    }
+    } while (!RPCData::interrupted);
 
     Discord_Shutdown();
 }

@@ -1,0 +1,47 @@
+name: Build and Release
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up MSVC
+        uses: actions/setup-msbuild@v1
+
+      - name: Determine version
+        id: determine_version
+        run: |
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.1")
+          echo "::set-output name=version::$latest_tag"
+        shell: bash
+
+      - name: Configure and build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . --config Release
+
+      - name: Increment version
+        id: version
+        run: |
+          $version = Get-Content version
+          Set-Content -Path version -Value ($version + 1)
+          Write-Host "Version number incremented to $version"
+        shell: pwsh
+
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: 'build/Release/libScePad.dll'
+          draft: false
+          prerelease: false
+          tag_name: v${{ steps.version.outputs.version }}
+          title: Release v${{ steps.version.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
