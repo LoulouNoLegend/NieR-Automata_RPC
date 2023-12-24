@@ -14,11 +14,11 @@ public:
         discordPresence.instance = 0;
         Discord_UpdatePresence(&discordPresence);
 
-#ifdef _DEBUG
-        printf("\nDiscord: connected to user %s#%s - %s\n",
-               connectedUser->username,
-               connectedUser->discriminator,
-               connectedUser->userId);
-#endif
+//#ifdef _DEBUG
+//        printf("\nDiscord: connected to user %s#%s - %s\n",
+//               connectedUser->username,
+//               connectedUser->discriminator,
+//               connectedUser->userId);
+//#endif
     }
 };
