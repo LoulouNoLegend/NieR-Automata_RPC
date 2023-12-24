@@ -10,6 +10,7 @@ Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how 
 **At the moment, this Rich Presence is only static!**
 
 This project provides a Rich Presence integration for NieR:Automata. It will display on your Discord account when you are playing the game!
+
 ![image](https://github.com/LoulouNoLegend/NieR-Automata_RPC/assets/40952934/187c47c7-e94e-4ed4-95e5-c7b9d97d4e4e)
 
 
