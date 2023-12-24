@@ -14,10 +14,10 @@
 #endif
 
 void init() {
-#ifdef _DEBUG
-    AllocConsole();
-    freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-#endif
+//#ifdef _DEBUG
+//    AllocConsole();
+//    freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
+//#endif
 
     DiscordEventHandlers handlers = {};
     handlers.ready = RPCHandler::onReady;
