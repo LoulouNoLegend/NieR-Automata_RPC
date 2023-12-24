@@ -5,6 +5,8 @@ Visit this page to know how it all works! *(and maybe start your own RPC project
 
 Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how Cmake works and also adapting the project to NieR! :)
 
+The mod can also be downloaded from [Nexus](https://www.nexusmods.com/nierautomata/mods/566)!
+
 ## Overview
 
 **At the moment, this Rich Presence is only static!**
