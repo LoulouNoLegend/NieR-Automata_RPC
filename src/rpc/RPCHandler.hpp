@@ -5,11 +5,11 @@ public:
     static void onReady(const DiscordUser* connectedUser)
     {
         DiscordRichPresence discordPresence = {};
-        discordPresence.state = "Playing, I guess.";
-        discordPresence.smallImageKey = "tom";
-        discordPresence.smallImageText = "Why the devs didn't add me ?";
+        discordPresence.details = "Glory to mankind";
+        discordPresence.smallImageKey = "yohra";
+        discordPresence.smallImageText = "Mod: github.com/LoulouNoLegend/NieR-Automata_RPC";
         discordPresence.largeImageKey = "sword";
-        discordPresence.largeImageText = "Mod: https://github.com/LoulouNoLegend/nier-automata_rpc";
+        discordPresence.largeImageText = "NieR:Automata";
         discordPresence.startTimestamp = RPCData::startTime;
         discordPresence.instance = 0;
         Discord_UpdatePresence(&discordPresence);
