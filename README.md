@@ -1,4 +1,4 @@
-# Nier Automata Rich Presence
+# NieR:Automata Rich Presence
 
 This project is based on [Crymachina RPC](https://github.com/Crymachina-modding/crymachina_rpc), using the commit published on december 4, 2023.
 Visit this page to know how it all works! *(and maybe start your own RPC project)*
@@ -9,7 +9,7 @@ Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how 
 
 **At the moment, this Rich Presence is only static!**
 
-This project provides a Rich Presence integration for Nier Automata. It will display on your Discord account when you are playing the game!
+This project provides a Rich Presence integration for NieR:Automata. It will display on your Discord account when you are playing the game!
 
 ## Installation - Normal method (Faster)
 
