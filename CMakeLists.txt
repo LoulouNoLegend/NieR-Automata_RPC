@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(crymachina_rpc)
+project(nier-automata_rpc)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -20,5 +20,5 @@ include_directories(src)
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
 file(GLOB_RECURSE LIB_SRC_FILES include/*.cpp)
 
-add_library(crymachina_rpc SHARED ${SOURCE_FILES} ${LIB_SRC_FILES} dllmain.cpp)
-set_target_properties(crymachina_rpc PROPERTIES OUTPUT_NAME "libScePad")
+add_library(nier-automata_rpc SHARED ${SOURCE_FILES} ${LIB_SRC_FILES} dllmain.cpp)
+set_target_properties(nier-automata_rpc PROPERTIES OUTPUT_NAME "steam_api64")
