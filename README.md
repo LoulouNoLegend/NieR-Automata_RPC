@@ -2,7 +2,7 @@
 
 This project was made by modifying the [Crymachina RPC](https://github.com/Crymachina-modding/crymachina_rpc) mod. Visit this page to know how it all works and maybe make your own RPC project!
 
-Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how Cmake works! :)
+Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how Cmake works and also adapting the project to NieR! :)
 
 ## Overview
 
