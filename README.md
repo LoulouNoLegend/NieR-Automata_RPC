@@ -1,6 +1,7 @@
 # Nier Automata Rich Presence
 
-This project was made by modifying the [Crymachina RPC](https://github.com/Crymachina-modding/crymachina_rpc) mod. Visit this page to know how it all works and maybe make your own RPC project!
+This project is based on [Crymachina RPC](https://github.com/Crymachina-modding/crymachina_rpc), using the commit published on december 4, 2023.
+Visit this page to know how it all works! *(and maybe start your own RPC project)*
 
 Thanks to [Mashynn](https://github.com/KirigiriX) for helping me understand how Cmake works and also adapting the project to NieR! :)
 
