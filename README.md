@@ -16,7 +16,7 @@ This project provides a Rich Presence integration for NieR:Automata. It will dis
 ![image](https://github.com/LoulouNoLegend/NieR-Automata_RPC/assets/40952934/187c47c7-e94e-4ed4-95e5-c7b9d97d4e4e)
 
 
-## Installation - Normal method (Faster)
+## Installation - Method 1: Normal (Faster)
 
 1. Be sure that NieR:Automata is installed on your system
 2. Download the zip file from the [release page](https://github.com/LoulouNoLegend/NieR-Automata_RPC/releases)
@@ -24,7 +24,7 @@ This project provides a Rich Presence integration for NieR:Automata. It will dis
 4. Extract the two files (`steam_api64.dll` and `NieRAutomataRPC.dll`)
 5. If it asks to replace files, you just need to accept
 
-## Installation - Alternative method
+## Installation - Method 2: Not recommended (But could be a fix in some ways?)
 
 1. Be sure that NieR:Automata is installed on your system
 2. Download the zip file from the [release page](https://github.com/LoulouNoLegend/NieR-Automata_RPC/releases)
